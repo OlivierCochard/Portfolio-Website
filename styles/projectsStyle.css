@@ -1,0 +1,60 @@
+.projectTrio {
+	display: flex;
+	max-width: 650px;
+	justify-content: center;
+	gap: 40px 40px;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	margin-bottom: 75px;
+}
+.buttons {
+	margin-bottom: 50px;
+}
+
+.projectArea {
+	width: 175px;
+	height: 100%;
+	text-align: center;
+	outline: 2px solid var(--secondColor);
+	justify-content: center;
+	color: var(--thirdColor);
+	background-color: var(--secondColor);
+	border-radius: 5px;
+}
+.projectArea:hover {
+	background-color: var(--thirdColor);
+	outline: 2px solid var(--thirdColor);
+	color: #F6FCDF;
+}
+.projectArea:hover .bg {
+	background-color: var(--thirdColor);
+}
+.projectArea:hover h3 {
+	background-color: var(--thirdColor);
+}
+.projectArea:hover img {
+	background-color: transparent;
+	filter: brightness(60%);
+}
+
+.bg {
+  background-color: var(--secondColor);
+  padding-right: 2px;
+  padding-left: 2px;
+  min-height: 20px;
+}
+
+.projectArea h3 {
+	margin: 0 auto;
+  width: fit-content;
+  font-size: 1.3rem;
+  background-color: var(--secondColor);
+}
+.projectArea img {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	background-color: var(--secondColor);
+}

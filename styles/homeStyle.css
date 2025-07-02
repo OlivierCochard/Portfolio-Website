@@ -1,0 +1,12 @@
+img {
+  width: 204;
+  height: auto;
+  margin-top: 15px;
+  border-radius: 5px;
+  outline: 2px solid var(--textColor);
+}
+
+.intro-text {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}

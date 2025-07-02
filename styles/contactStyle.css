@@ -1,0 +1,119 @@
+.logo-link {
+  display: flex;
+  align-items: center;  
+  gap: 10px;    
+  margin-bottom: 10px;
+}
+.logo-link img {
+  margin-top: -1px;
+  width: 20px;
+  background-color: transparent;
+}
+.logo-link a {
+  color: var(--secondColor);
+}
+.logo-link a:hover {
+  color: var(--thirdColor);
+}
+.logo-link p {
+  line-height: 1px;
+  margin-bottom: 0px;
+}
+
+.links {
+  display: flex;
+  gap: 0px 100px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+.right {
+  text-align: right;
+}
+.right .logo-link {
+  justify-content: flex-end;
+}
+
+h3 {
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 250px;
+  background-color: var(--secondColor);
+}
+
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 0;
+  border: 2px solid var(--formColor);
+  border-radius: 8px;
+  margin-bottom: 25px;
+  align-items: stretch;
+}
+
+label {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  text-align: left;
+  width: fit-content;
+}
+
+input, textarea {
+  color: var(--textColor);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--formColor);
+  resize: none;
+}
+
+input:focus, textarea:focus {
+  outline: 1px solid var(--textColor);
+}
+
+button {
+  margin-top: 20px;
+}
+
+
+
+
+@media (min-width: 1600px) {
+  h3 {
+    width: 275px;
+  }
+  form {
+    max-width: 800px;
+  }
+}
+@media (max-width: 675px) {
+  .links {
+    max-width: 800px;
+    gap: 0;
+    flex-direction: column;
+    align-items: left;
+    background-color: red;
+  }
+  .right {
+    text-align: left;
+  }
+  .right .logo-link {
+    display: flex; 
+    flex-direction: row-reverse; 
+    justify-content: flex-start;
+    align-items: center;
+    width: fit-content;
+  }
+  h3 {
+    width: 100%;
+  }
+}
