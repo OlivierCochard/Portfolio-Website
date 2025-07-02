@@ -260,7 +260,6 @@ $projectItems = [
             ],
         )),
         2 => new project(array(
-            'type' => "React.js web app",
             'languages' => "JavaScript, CSS, MySql, GraphQL",
             'imageFileName' => ["images/projects/website_3_1.png", "images/projects/website_3_2.png", "images/projects/website_3_3.png", "images/projects/website_3_4.png"],
             'gitHubLink' => "https://github.com/OlivierCochard/Todolist-React",
@@ -284,6 +283,32 @@ $projectItems = [
             'instructions' => [
                 'en' => "$ npm run start\n$ node mon-serveur-graphql/index.js",
                 'fr' => "$ npm run start\n$ node mon-serveur-graphql/index.js",
+            ],
+        )),
+        3 => new project(array(
+            'languages' => "HTML, CSS, JavaScript, PHP",
+            'imageFileName' => ["images/projects/website_4_1.png", "images/projects/website_4_2.png", "images/projects/website_4_3.png", "images/projects/website_4_4.png"],
+            'gitHubLink' => "https://github.com/OlivierCochard/Portfolio-Website",
+
+            'title' => [
+                'en' => "Portolio website",
+                'fr' => "Portfolio site web",
+            ],
+            'period' => [
+                'en' => "3rd",
+                'fr' => "3ème",
+            ],
+            'type' => [
+                'en' => "Website",
+                'fr' => "Site web",
+            ],
+            'description' => [
+                'en' => "This is a showcase website that serves as a personal developer portfolio, built using HTML, CSS, JavaScript, and PHP.\nIt includes a homepage, a page presenting my skills, an « About » page featuring my resume, a contact page with a form, a project listing page with a filter allowing sorting by different categories (none, academic, or personal), a page with detailed information about each project, and a page that lets users play a game directly via a WebGL link when available.\nThe design is based on a general stylesheet, complemented by specific CSS files for each page. The website is bilingual, with the ability to switch between French and English, and includes a button to toggle between light and dark themes, which also affects the resume display. Two dedicated JavaScript files manage the language and theme features.\nThe site is designed to be easily maintainable: adding new content simply requires inserting a new entry into an array within the scripts/data.php script. I paid close attention to both functionality and visual presentation to achieve a professional and user-friendly result.",
+                'fr' => "Il s’agit d’un site web vitrine qui fait office de portfolio personnel de développeur, développé en HTML, CSS, JavaScript et PHP.\nJ’y ai intégré une page d’accueil, une page présentant mes compétences, une page « À propos » contenant mon CV, une page de contact avec un formulaire, une page listant mes projets avec un filtre permettant de trier selon différentes catégories (aucun filtre, académique ou personnel), une page dédiée aux détails de chaque projet, ainsi qu’une page permettant de jouer directement à un jeu via un lien WebGL lorsque celui-ci est disponible.\nLe design repose sur une feuille de style générale complétée par des CSS spécifiques à chaque page. Le site est bilingue, avec la possibilité de basculer entre le français et l’anglais, et inclut un bouton pour changer le thème entre clair et sombre, ce qui affecte également l’affichage du CV. Deux fichiers JavaScript sont dédiés à la gestion de la langue et du thème.\nCe site est conçu pour être assez autonome : il suffit d’ajouter une nouvelle entrée dans un tableau du script 'scripts/data.php' pour enrichir le contenu. J’ai porté une attention particulière aux fonctionnalités ainsi qu’à l’aspect graphique final afin d’obtenir un rendu professionnel et ergonomique.",
+            ],
+            'instructions' => [
+                'en' => "Link : http://oliviercochard.myartsonline.com",
+                'fr' => "Lien: http://oliviercochard.myartsonline.com",
             ],
         )),
     ],

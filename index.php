@@ -28,9 +28,10 @@
 
 			<p data-en="For several years, I've been creating 2D pixel art and Unity games, blending creativity with code." data-fr="Depuis quelques années, je crée des jeux 2D sur Unity et réalise du pixel arts, alliant créativité et programmation."></p>
 		</div>
-
-		<button class="btn" id="lang-toggle-btn"></button>
-		<button class="btn" id="theme-toggle-btn"></button>
+		<div class="buttons">
+			<button class="btn" id="lang-toggle-btn"></button>
+			<button class="btn" id="theme-toggle-btn"></button>
+		</div>
   	</div>
   	<?php generateFooter(); ?>
   	<script src="scripts/lang.js"></script>
