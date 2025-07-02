@@ -21,9 +21,11 @@ function applyTheme(themeObj, themeName) {
     document.documentElement.style.setProperty(prop, value);
   }
 
-  updateCv(themeName, localStorage.getItem('lang') || 'fr');
+  const lang = localStorage.getItem('lang') || 'fr';
+
+  updateButton(themeName, lang);
+  updateCv(themeName, lang);
   updateImages(themeName);
-  updateButton(themeName);
 }
 
 function loadTheme() {
@@ -41,15 +43,14 @@ function toggleTheme() {
   applyTheme(themeObj, newTheme);
 }
 
-function updateButton(theme) {
+function updateButton(theme, lang) {
   const btn = document.getElementById('theme-toggle-btn');
   if (!btn) return;
 
-  const lang = document.documentElement.lang || 'fr';
   if (theme === 'light') {
     btn.textContent = lang === 'en' ? 'Dark theme' : 'Thème sombre';
   } else {
-    btn.textContent = lang === 'en' ? 'Light theme' : 'Thème lumineux';
+      btn.textContent = lang === 'en' ? 'Light theme' : 'Thème lumineux';
   }
 }
 
