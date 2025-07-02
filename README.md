@@ -10,6 +10,6 @@ Link : http://oliviercochard.myartsonline.com
   <tr>
   	<td><img src="images/projects/website_4_2.png" width="300"/></td>
     <td><img src="images/projects/website_4_3.png" width="300"/></td>
-    <td><img src="image/projects/website_4_4.png" width="300"/></td>
+    <td><img src="images/projects/website_4_4.png" width="300"/></td>
   </tr>
 </table>
