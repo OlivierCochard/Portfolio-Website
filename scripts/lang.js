@@ -1,19 +1,26 @@
 const toggleThemeBtn = document.getElementById('theme-toggle-btn');
 const toggleLangBtn = document.getElementById('lang-toggle-btn');
 const elements = document.querySelectorAll('[data-en][data-fr]');
-
 let currentLang = localStorage.getItem('lang') || 'fr';
 let currentTheme = localStorage.getItem('theme') || 'dark';
 
 function applyLanguage(lang) {
   elements.forEach(el => {
     const text = el.getAttribute(`data-${lang}`);
-    const html = text.replace(/\n/g, '<br>');
-    el.innerHTML = html;
+    if (text.includes('\n')) {
+      el.innerHTML = text.replace(/\n/g, '<br>');
+    } else {
+      el.textContent = text;
+    }
   });
 
-  toggleLangBtn.textContent = lang === 'fr' ? 'English' : 'Français';
+  if (toggleLangBtn) {
+    toggleLangBtn.textContent = lang === 'fr' ? 'English' : 'Français';
+  }
+
+  applyLanguageThemeBtn(lang, currentTheme);
 }
+
 function applyLanguageThemeBtn(lang, theme) {
   if (!toggleThemeBtn) return;
 
@@ -25,13 +32,11 @@ function applyLanguageThemeBtn(lang, theme) {
 }
 
 applyLanguage(currentLang);
-applyLanguageThemeBtn(currentLang, currentTheme);
 
-toggleLangBtn.addEventListener('click', () => {
-  currentLang = currentLang === 'fr' ? 'en' : 'fr';
-  currentTheme = localStorage.getItem('theme') || 'dark';
-  localStorage.setItem('lang', currentLang);
-  applyLanguage(currentLang);
-
-  applyLanguageThemeBtn(currentLang, currentTheme);
-});
+if (toggleLangBtn) {
+  toggleLangBtn.addEventListener('click', () => {
+    currentLang = currentLang === 'fr' ? 'en' : 'fr';
+    localStorage.setItem('lang', currentLang);
+    applyLanguage(currentLang);
+  });
+}

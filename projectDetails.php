@@ -21,9 +21,12 @@
 	<?php generateMenu(''); ?>
 	<div class="content">
 		<?php
-			$filter = '';
-			if (isset($_GET['filter']) && !empty($_GET['filter']))
-		    	$filter = $_GET['filter'];
+			$contextFilter = '';
+			if (isset($_GET['contextFilter']) && !empty($_GET['contextFilter']))
+		    	$contextFilter = $_GET['contextFilter'];
+		    $categoryFilter = '';
+			if (isset($_GET['categoryFilter']) && !empty($_GET['categoryFilter']))
+		    	$categoryFilter = $_GET['categoryFilter'];
 			$category = '';
 			if (isset($_GET['category']) && !empty($_GET['category']))
 		    	$category = $_GET['category'];
@@ -90,7 +93,7 @@
 				echo "<h3 data-en='Links' data-fr='Liens'></h3>";
 				if ($project->getPlay() !== []){
 					echo "<div class='logo-text'>";
-					echo "<a href='projectPlay.php?category=$category&numero=$numero&filter=$filter'><p data-en='Play with WebGL' data-fr='Jouer avec WebGL'></p></a>";
+					echo "<a href='projectPlay.php?category=$category&numero=$numero&contextFilter=$contextFilter'><p data-en='Play with WebGL' data-fr='Jouer avec WebGL'></p></a>";
 					echo "<img id='unity-img' class='logo' src='images/unityLogo.png'alt='unity logo'>";
 					echo "</div>";
 				}
@@ -168,7 +171,7 @@
 				}
 			}
 			echo "<div class='buttons'>";
-			echo "<a href='projects.php?filter=$filter' class='btn' data-en='Back to projects' data-fr='Retour aux projets'></a>";
+			echo "<a href='projects.php?contextFilter=$contextFilter&categoryFilter=$categoryFilter' class='btn' data-en='Back to projects' data-fr='Retour aux projets'></a>";
 			echo "</div>";
 			echo "</div>";
 		?>

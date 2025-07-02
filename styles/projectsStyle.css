@@ -58,3 +58,45 @@
 	padding-top: 2px;
 	background-color: var(--secondColor);
 }
+
+
+
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.filters label {
+  font-weight: 600;
+  margin-right: 0.5rem;
+  color: var(--textColor);
+}
+.filters select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: var(--secondColor);
+  color: var(--textColor);
+  border: 1px solid var(--backgroundColor);      
+  transition: border 0.15s ease;
+  text-align: center;
+}
+.filters select:hover {
+  border: 1px solid var(--textColor);
+}
+.filters select option {
+  background-color: var(--secondColor);
+  color: var(--textColor);
+}
+.filters select option :hover{
+  background-color: var(--secondColor);
+  color: var(--textColor);
+}

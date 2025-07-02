@@ -20,61 +20,121 @@
 	<?php generateMenu('projects'); ?>
 	<div class="content">
 		<?php
-		    $filter = '';
-		    if (isset($_GET['filter']) && !empty($_GET['filter']))
-		        $filter = $_GET['filter'];
-
-		    $word_en = "";
-		    $word_fr = "";
-
-		    if ($filter === 'academic'){
-		        $word_en = "Academic ";
-		        $word_fr = " Académiques";
+		    $contextFilter = '';
+		    if (isset($_GET['contextFilter']) && !empty($_GET['contextFilter']))
+		        $contextFilter = $_GET['contextFilter'];
+		    $contextFilter_en = "";
+		    $contextFilter_fr = "";
+		    if ($contextFilter === 'academic'){
+		        $contextFilter_en = "Academic ";
+		        $contextFilter_fr = " Académiques";
 		    }
-		    else if ($filter === 'personal'){
-		        $word_en = "Personal ";
-		        $word_fr = " Personnels";
+		    else if ($contextFilter === 'personal'){
+		        $contextFilter_en = "Personal ";
+		        $contextFilter_fr = " Personnels";
 		    }
 
-		    echo "<h1 data-en='My {$word_en}Projects.' data-fr='Mes Projets{$word_fr}.'></h1>";
+		    $categoryFilter = '';
+		    if (isset($_GET['categoryFilter']) && !empty($_GET['categoryFilter']))
+		        $categoryFilter = $_GET['categoryFilter'];
+		    $categoryFilter_en = "";
+		    $categoryFilter_fr = "";
+		    if ($categoryFilter === 'game'){
+		        $categoryFilter_en = "Game ";
+		        $categoryFilter_fr = " De Jeux";
+		    }
+		    else if ($categoryFilter === 'software'){
+		        $categoryFilter_en = "Software ";
+		        $categoryFilter_fr = " De Logiciels";
+		    }
+		    else if ($categoryFilter === 'web'){
+		        $categoryFilter_en = "Web ";
+		        $categoryFilter_fr = " De Web";
+		    }
+
+		    echo "<h1 data-en='My {$categoryFilter_en}{$contextFilter_en}Projects.' data-fr='Mes Projets{$contextFilter_fr}{$categoryFilter_fr}.'></h1>";
 		?>
 
+		<?php
+			$contextFilter = $_GET['contextFilter'] ?? 'all';
+			$categoryFilter = $_GET['categoryFilter'] ?? 'all';
 
-		<p data-en="If you want, you can filter my projects" data-fr="Si vous voulez, vous pouvez filtrer mes projets"></p>
+			$contextOptions = [
+			    'all' => ['en' => 'All', 'fr' => 'Tous'],
+			    'academic' => ['en' => 'Academic', 'fr' => 'Académique'],
+			    'personal' => ['en' => 'Personal', 'fr' => 'Personnel'],
+			];
+
+			$categoryOptions = [
+			    'all' => ['en' => 'All', 'fr' => 'Tous'],
+			    'web' => ['en' => 'Website', 'fr' => 'Site Web'],
+			    'game' => ['en' => 'Game', 'fr' => 'Jeu'],
+			    'software' => ['en' => 'Software', 'fr' => 'Logiciel'],
+			];
+		?>
+
 		<div class="buttons">
-			<?php
-				if ($filter !== 'academic')
-					echo "<a href='?filter=academic' class='btn' data-en='Academic' data-fr='Académiques'></a>";
-				if ($filter === 'academic' || $filter  === 'personal')
-					echo "<a href='?filter=none' class='btn' data-en='None' data-fr='Rien'></a>";
-				if ($filter !== 'personal')
-					echo "<a href='?filter=personal' class='btn' data-en='Personal' data-fr='Personnels'></a>";
-			?>
+			<div class="filters">
+			    <form method="get" style="display: inline;">
+			        <label for="contextFilter" data-en="Context:" data-fr="Contexte :">Context:</label>
+			        <select name="contextFilter" id="contextFilter" onchange="this.form.submit()">
+			            <?php foreach ($contextOptions as $key => $label): ?>
+			                <option
+			                    value="<?= $key ?>"
+			                    <?= $contextFilter === $key ? 'selected' : '' ?>
+			                    data-en="<?= $label['en'] ?>"
+			                    data-fr="<?= $label['fr'] ?>"
+			                >
+			                    <?= $label['en'] ?>
+			                </option>
+			            <?php endforeach; ?>
+			        </select>
+			        <input type="hidden" name="categoryFilter" value="<?= $categoryFilter ?>">
+			    </form>
+
+			    <form method="get" style="display: inline;">
+			        <label for="categoryFilter" data-en="Category:" data-fr="Catégorie :">Category:</label>
+			        <select name="categoryFilter" id="categoryFilter" onchange="this.form.submit()">
+			            <?php foreach ($categoryOptions as $key => $label): ?>
+			                <option
+			                    value="<?= $key ?>"
+			                    <?= $categoryFilter === $key ? 'selected' : '' ?>
+			                    data-en="<?= $label['en'] ?>"
+			                    data-fr="<?= $label['fr'] ?>"
+			                >
+			                    <?= $label['en'] ?>
+			                </option>
+			            <?php endforeach; ?>
+			        </select>
+			        <input type="hidden" name="contextFilter" value="<?= $contextFilter ?>">
+			    </form>
+			</div>
 		</div>
 
-		<h1 data-en="Games." data-fr="Jeux."></h1>
 		<?php
-			echo "<div class=projectTrio>";
-			generateSection("Game", $filter);
-			echo "</div>";
-		?>
-
-		<h1 data-en="Software." data-fr="Logiciels.">.</h1>
-		<?php
-			echo "<div class=projectTrio>";
-			generateSection("Software", $filter);
-			echo "</div>";
-		?>
-
-		<h1>Web.</h1>
-		<?php
-			echo "<div class=projectTrio>";
-			generateSection("Web", $filter);
-			echo "</div>";
+			if ($categoryFilter === 'game' || $categoryFilter === '' || $categoryFilter === 'all'){
+				echo "<h1 data-en='Games.' data-fr='Jeux.'></h1>";
+				echo "<div class='projectTrio'>";
+				generateSection("Game", $contextFilter, $categoryFilter);
+				echo "</div>";
+			}
+			if ($categoryFilter === 'software' || $categoryFilter === '' || $categoryFilter === 'all'){
+				echo "<h1 data-en='Software.' data-fr='Logiciels.'></h1>";
+				echo "<div class='projectTrio'>";
+				generateSection("Software", $contextFilter, $categoryFilter);
+				echo "</div>";
+			}
+			if ($categoryFilter === 'web' || $categoryFilter === '' || $categoryFilter === 'all'){
+				echo "<h1 data-en='Website.' data-fr='Sites Web.'></h1>";
+				echo "<div class='projectTrio'>";
+				generateSection("Web", $contextFilter, $categoryFilter);
+				echo "</div>";
+			}
 		?>
 	</div>
+
 	<?php generateFooter(); ?>
 	<script src="scripts/lang.js"></script>
 	<script src="scripts/themeToggle.js"></script>
 </body>
-</html> 
+</html>

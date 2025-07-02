@@ -15,11 +15,11 @@ function generateProject(String $category = '', int $numero = -1) {
 
     return $projectItems[$category][$numero];
 }
-function generateSectionById(String $category = '', int $numero = -1, string $filter = ''){
+function generateSectionById(String $category = '', int $numero = -1, string $contextFilter, string $categoryFilter){
     $project = generateProject($category, $numero);
     if ($project === null) return false;
 
-    $url = "projectDetails.php?category=" . urlencode($category) . "&numero=" . $numero . "&filter=" . $filter;
+    $url = "projectDetails.php?category=" . urlencode($category) . "&numero=" . $numero . "&contextFilter=" . $contextFilter . "&categoryFilter=" . $categoryFilter;
     echo "<a href='$url' style='text-decoration: none; color: inherit;'>";
     echo "<div class='projectArea'>";
     echo "<h3 data-en=\"" . htmlspecialchars($project->getTitle('en'), ENT_QUOTES) . "\" data-fr=\"" . htmlspecialchars($project->getTitle('fr'), ENT_QUOTES) . "\"></h3>";
@@ -37,7 +37,7 @@ function generateSectionById(String $category = '', int $numero = -1, string $fi
     echo "</a>";
     return true;
 }
-function generateSection(string $category = '', string $filter = '') {
+function generateSection(string $category = '', string $contextFilter = '', string $categoryFilter = '') {
     global $projectItems;
 
     if (!isset($projectItems[$category])) return;
@@ -45,10 +45,10 @@ function generateSection(string $category = '', string $filter = '') {
     $projects = array_reverse($projectItems[$category], true);
     $counter = 0;
     foreach ($projects as $numero => $project) {
-        if ($filter === "academic" && !$project->getIsAcademic()) continue;
-        if ($filter === "personal" && $project->getIsAcademic()) continue;
+        if ($contextFilter === "academic" && !$project->getIsAcademic()) continue;
+        if ($contextFilter === "personal" && $project->getIsAcademic()) continue;
 
-        if (generateSectionById($category, $numero, $filter) === true)
+        if (generateSectionById($category, $numero, $contextFilter, $categoryFilter) === true)
             $counter++;
     }
 

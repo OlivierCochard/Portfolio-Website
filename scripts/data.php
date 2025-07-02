@@ -289,6 +289,7 @@ $projectItems = [
             'languages' => "HTML, CSS, JavaScript, PHP",
             'imageFileName' => ["images/projects/website_4_1.png", "images/projects/website_4_2.png", "images/projects/website_4_3.png", "images/projects/website_4_4.png"],
             'gitHubLink' => "https://github.com/OlivierCochard/Portfolio-Website",
+            'isAcademic' => false,
 
             'title' => [
                 'en' => "Portolio website",
