@@ -15,7 +15,7 @@ function generateProject(String $category = '', int $numero = -1) {
 
     return $projectItems[$category][$numero];
 }
-function generateSectionById(String $category = '', int $numero = -1, string $contextFilter, string $categoryFilter){
+function generateSectionById(String $category = '', int $numero = -1, string $contextFilter = '', string $categoryFilter = ''){
     $project = generateProject($category, $numero);
     if ($project === null) return false;
 
