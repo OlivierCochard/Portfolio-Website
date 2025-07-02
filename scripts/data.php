@@ -307,8 +307,8 @@ $projectItems = [
                 'fr' => "Il s’agit d’un site web vitrine qui fait office de portfolio personnel de développeur, développé en HTML, CSS, JavaScript et PHP.\nJ’y ai intégré une page d’accueil, une page présentant mes compétences, une page « À propos » contenant mon CV, une page de contact avec un formulaire, une page listant mes projets avec un filtre permettant de trier selon différentes catégories (aucun filtre, académique ou personnel), une page dédiée aux détails de chaque projet, ainsi qu’une page permettant de jouer directement à un jeu via un lien WebGL lorsque celui-ci est disponible.\nLe design repose sur une feuille de style générale complétée par des CSS spécifiques à chaque page. Le site est bilingue, avec la possibilité de basculer entre le français et l’anglais, et inclut un bouton pour changer le thème entre clair et sombre, ce qui affecte également l’affichage du CV. Deux fichiers JavaScript sont dédiés à la gestion de la langue et du thème.\nCe site est conçu pour être assez autonome : il suffit d’ajouter une nouvelle entrée dans un tableau du script 'scripts/data.php' pour enrichir le contenu. J’ai porté une attention particulière aux fonctionnalités ainsi qu’à l’aspect graphique final afin d’obtenir un rendu professionnel et ergonomique.",
             ],
             'instructions' => [
-                'en' => "Link : http://oliviercochard.myartsonline.com",
-                'fr' => "Lien: http://oliviercochard.myartsonline.com",
+                'en' => "Link : http://oliviercochard.myartsonline.com/index.php",
+                'fr' => "Lien: http://oliviercochard.myartsonline.com/index.php",
             ],
         )),
     ],
