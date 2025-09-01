@@ -65,7 +65,7 @@ $projectItems = [
         2 => new project(array(
             'languages' => "C#",
             'imageFileName' => ["images/projects/game_5_1.png", "images/projects/game_5_2.png", "images/projects/game_5_3.png", "images/projects/game_5_4.png"],
-            'gitHubLink' => "",
+            'gitHubLink' => "https://github.com/OlivierCochard/FloppyBird",
             'itchLink' => "https://holyvier-studio.itch.io/floppybird",
             'play' => ["https://itch.io/embed-upload/12292578", "https://holyvier-studio.itch.io/floppybird"],
             'isAcademic' => false,
@@ -127,6 +127,7 @@ $projectItems = [
             'isAcademic' => false,
             'imageFileName' => ["images/projects/game_6_1.jpg", "images/projects/game_6_2.jpg", "images/projects/game_6_3.jpg", "images/projects/game_6_4.jpg"],
             'itchLink' => "https://holyvier-studio.itch.io/switchnest",
+            'gitHubLink' => "https://github.com/OlivierCochard/SwitchNest",
             'play' => ["https://itch.io/embed-upload/12807765", "https://holyvier-studio.itch.io/switchnest"],
 
             'title' => [
@@ -179,6 +180,72 @@ $projectItems = [
             'instructions' => [
                 'en' => "$ ant [javadoc, runWinrate, runTemps, runSurvie, run]",
                 'fr' => "$ ant [javadoc, runWinrate, runTemps, runSurvie, run]",
+            ],
+        )),
+        6 => new project(array(
+            'languages' => "C#",
+            'isAcademic' => false,
+            'imageFileName' => ["images/projects/game_7_1.png", "images/projects/game_7_2.png", "images/projects/game_7_3.png", "images/projects/game_7_4.png"],
+            'itchLink' => "https://holyvier-studio.itch.io/LightAdventure",
+            'gitHubLink' => "https://github.com/OlivierCochard/LightAdventure",
+            'play' => ["https://itch.io/embed-upload/14844241", "https://holyvier-studio.itch.io/LightAdventure"],
+
+            'title' => [
+                'en' => "LightAdventure",
+                'fr' => "LightAdventure",
+            ],
+            'period' => [
+                'en' => "3rd",
+                'fr' => "3ème",
+            ],
+            'type' => [
+                'en' => "Unity game",
+                'fr' => "Jeu unity",
+            ],
+            'description' => [
+                'en' => "This is a 2D unity game with nine unique puzzle levels are available, including wave survival, a boss fight, and a level unlock system. I implemented the main menu, an in-game menu, SFX/music management, and animations.\nTo survive, you must stay in the light. Light activations are temporary, so you’ll need to move quickly or stay close to the source. During your exploration, you’ll encounter mysterious creatures that can be ignited by shooting a projectile through a torch. These creatures want to steal your privilege. Defeat the boss to rescue them!",
+                'fr' => "Il sagit d'un jeu unity en 2D avec 9 puzzles uniques de disponibles, incluant un niveau avec des vagues d'ennemies, un combat de boss, et système de débloquage de niveaux. J'ai implémenté un menu pricipal, au menu en cours de partie, la gestion du son et de la musique, et des animations.\nPour survivre, il vaut mieux rester dans la lumière. L'activation de la lumière est temporaire, donc il vaut mieux se déplacer rapidement ou rester proche d'une source de lumière.Durant l'exploration, vous rencontrerez des créatures mystérieuses qui peuvent etre activée en tirant dessus à travers une torche allumée. Ces créatures veulent voler vos prévilèges. Defeait the boss to rescue them!",
+            ],
+            'commands' => [
+                'en' => "[W, up arrow, left click] => jump\n[A, left arrow] => left\n[D, right arrow] => right\n[Right click] => projectile\n[E] => interact\n[Escape] => pause",
+                'fr' => "[Z, flèche haute, clic gauche] => saut\n[Q, flèche gauche] => left\n[D, flèche droite] => droite\n[Clic gauche] => projectile\n[E] => Interagir\n[Echap] => pause",
+            ],
+            'instructions' => [
+                'en' => "extract .zip\ndouble-click the executable file",
+                'fr' => "extraire .zip\ndouble clic sur le fichier executable",
+            ],
+        )),
+        7 => new project(array(
+            'languages' => "C#",
+            'isAcademic' => false,
+            'imageFileName' => ["images/projects/game_8_1.jpg", "images/projects/game_8_2.jpg", "images/projects/game_8_3.jpg", "images/projects/game_8_4.jpg"],
+            'itchLink' => "https://holyvier-studio.itch.io/RaceLooped",
+            'gitHubLink' => "https://github.com/OlivierCochard/RaceLooped",
+            'play' => ["https://itch.io/embed-upload/14600659", "https://holyvier-studio.itch.io/RaceLooped"],
+
+            'title' => [
+                'en' => "RaceLooped",
+                'fr' => "RaceLooped",
+            ],
+            'period' => [
+                'en' => "3rd",
+                'fr' => "3ème",
+            ],
+            'type' => [
+                'en' => "Unity game",
+                'fr' => "Jeu unity",
+            ],
+            'description' => [
+                'en' => "This is a 2D unity game with five circuits are available, each with increasing difficulty, and a highscore system is included. I implemented the main menu, an in-game menu, SFX/music management, and a particle system.\nYou must survive and finish each round quickly, as the timer is always running. At the end of each round, a bot will replay your previous run (including velocity, inputs, and rotation). The bot will behave exactly as you did, so you'll need to memorize patterns to avoid colliding with them.\nIf a car takes damage, a warning will appear above it. If it takes damage again, you lose the game. Your goal is to complete as many rounds as possible without dying and to keep all your bots alive.",
+                'fr' => "C'est un jeu unity en 2D avec cinq circuits disponibles, chaque circuit augmente la difficulté, et un système de meilleur score est inclu. J'ai implémenté the menu principal, un menu en jeu, la gestion de la musique et des sons, et un système de particules.\nVous feriez mieux de survivre and finir le round rapidement, une ia va rejouer votre trajet précedent (velocité, inputs, et la rotation). L'ia va donc se comporter exactement comme vous, donc vous devrez mémoriser vos propres patternes pour eviter de rentrer en colision.\nSi une voiture prend un dégat, un avertissement disant de faire attention apparaitra au dessus du vehicule, en cas de deuxième collision, le vehicule sera détruit et vous perdrez la partie. L'objectif esr de réussir à franchir la ligne d'arrivée dans le temps imparti avec le plus de voitures possibles.",
+            ],
+            'commands' => [
+                'en' => "[W, up arrow, left click] => drive\n[S, down arrow, right click] => back\n[A, left arrow] => left\n[D, right arrow] => right\n[Escape] => Pause",
+                'fr' => "[Z, flècge haute, clic gauche] => avancer\n[S, flèche basse, clic droit] => retour\n[Q, flèche gauche] => gauche\n[D, flèche droite] => droite\n[Echap] => Pause",
+            ],
+            'instructions' => [
+                'en' => "extract .zip\ndouble-click the executable file",
+                'fr' => "extraire .zip\ndouble clic sur le fichier executable",
             ],
         )),
     ],
